@@ -20,15 +20,19 @@ function ItemList() {
 
   return (
     <>
-      <h1 className="text-4xl mb-5">Sort by: <span className=" font-bold text-blue-300">{sortBy}</span></h1>
+      <h1 className="text-4xl mb-5 text-center">Sort by: <span className=" font-bold text-blue-300">{sortBy}</span></h1>
       <div>
         {sortItems.map((item, index) => (
           <Item key={index} name={item.name} quantity={item.quantity} category={item.category} />
         ))}
       </div >
-      <div className=" flex flex-1 flex-row justify-around  ">
-        <button onClick={() => setSortBy('name')} className={` h-15 rounded-2xl hover:bg-black hover:text-white cursor-pointer ${sortBy === "name" ? " bg-blue-100 text-black w-50" : "bg-amber-50 text-black w-30"} `}> name</button >
-        <button onClick={() => setSortBy('category')} className={` h-15 rounded-2xl  hover:bg-black hover:text-white cursor-pointer ${sortBy === "category" ? " bg-blue-100 text-black w-50 " : "bg-amber-50 text-black w-30"} `}>category</button>
+      <div className=" flex flex-col md:flex-row sm:items-center justify-around gap-4 mt-8
+      ">
+        <button onClick={() => setSortBy('name')} className={` h-15 rounded-2xl hover:bg-black hover:text-white cursor-pointer ${sortBy === "name" ? " bg-blue-100 text-black w-50" : "bg-amber-50 text-black w-50"} `}> name</button >
+        <button onClick={() => setSortBy('category')} className={` h-15 rounded-2xl  hover:bg-black hover:text-white cursor-pointer ${sortBy === "category" ? " bg-blue-100 text-black w-50 " : "bg-amber-50 text-black w-50"} `}>category</button>
+      </div>
+      <div>
+
       </div>
     </>
   );
