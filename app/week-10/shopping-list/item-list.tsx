@@ -3,7 +3,7 @@ import Item from "./item";
 import { useState } from "react";
 
 type ItemData = {
-  id?: string;
+  id: string;
   name: string;
   quantity: number;
   category: string;
